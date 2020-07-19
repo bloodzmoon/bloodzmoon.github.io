@@ -1,5 +1,7 @@
 # bloodzmoon.github.io
 
+![CI](https://github.com/bloodzmoon/bloodzmoon.github.io/workflows/CI/badge.svg?branch=dev)
+
 ## Project setup
 ```
 yarn install
