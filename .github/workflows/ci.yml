@@ -1,0 +1,32 @@
+name: CI
+
+on:
+  push:
+    branches: [ dev ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+        
+      - name: 🛠 Setup Node.js environment
+        uses: actions/setup-node@v2.1.0
+        with:
+          node-version: '12.x'
+    
+      - name: 📦 Install dependencies
+        run: yarn --frozen-lockfile
+      
+      - name: ⚡ Build app
+        run: yarn build
+      
+      - name: ✨ Deploy to master
+        run: |
+          cd dist
+          git init
+          git remote add origin https://github.com/bloodzmoon/bloodzmoon.github.io.git
+          git add .
+          git commit -m '🚀 Deploy'
+          git push origin master --force
