@@ -25,10 +25,10 @@ jobs:
       - name: ✨ Deploy to master
         run: |
           cd dist
-          git config --global user.name bloodzmoon
-          git config --global user.email thanyathon.dev@gmail.com
+          git config --global user.name ${{secrets.NAME}}
+          git config --global user.email ${{secrets.EMAIL}}
           git init
-          git remote add origin https://github.com/bloodzmoon/bloodzmoon.github.io.git
+          git remote add origin https://bloodzmoon:${{secrets.TOKEN}}@github.com/bloodzmoon/bloodzmoon.github.io.git
           git add .
           git commit -m '🚀 Deploy'
           git push origin master --force
