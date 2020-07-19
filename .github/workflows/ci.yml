@@ -25,6 +25,8 @@ jobs:
       - name: ✨ Deploy to master
         run: |
           cd dist
+          git config --global user.name bloodzmoon
+          git config --global user.email thanyathon.dev@gmail.com
           git init
           git remote add origin https://github.com/bloodzmoon/bloodzmoon.github.io.git
           git add .
