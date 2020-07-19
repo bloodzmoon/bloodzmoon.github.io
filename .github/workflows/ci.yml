@@ -22,15 +22,15 @@ jobs:
       - name: ⚡ Build app
         run: yarn build
 
-      - name: 👓 Copy .git
+      - name: 👓 Copy build into
         run: |
           git clone https://github.com/bloodzmoon/bloodzmoon.github.io.git tmp
-          cp -r tmp/.git/ dist/.git/
+          \cp -fR dist/* tmp/*
 
       
       - name: ✨ Deploy to master
         run: |
-          cd dist
+          cd tmp
           git config --global user.name ${{secrets.NAME}}
           git config --global user.email ${{secrets.EMAIL}}
           git remote set-url origin https://bloodzmoon:${{secrets.TOKEN}}@github.com/bloodzmoon/bloodzmoon.github.io.git
