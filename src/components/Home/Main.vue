@@ -8,6 +8,7 @@
       student at KMITL University
     </span>
     <div class="stars"></div>
+    <div class="arrow"></div>
     <img :src="GroundSVG" class="ground" />
   </section>
 </template>
@@ -101,6 +102,27 @@ export default {
   }
   50% {
     background-position: 1000px 500px;
+  }
+}
+
+.arrow {
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  padding: 8px;
+  transform: rotate(45deg) translate(-50%, -50%);
+  top: calc(50% + 200px);
+  left: 50%;
+  position: absolute;
+  animation: scroll-down 1.5s infinite ease-in-out;
+}
+
+@keyframes scroll-down {
+  0%,
+  100% {
+    top: calc(50% + 210px);
+  }
+  50% {
+    top: calc(50% + 200px);
   }
 }
 

@@ -1,25 +1,19 @@
 <template>
   <div>
     <Main />
-    <section class="second"></section>
+    <BottomNav />
   </div>
 </template>
 
 <script>
 import Main from '@/components/Home/Main'
+import BottomNav from '@/components/Home/BottomNav'
 
 export default {
   name: 'Home',
   components: {
     Main,
+    BottomNav,
   },
 }
 </script>
-
-<style scoped>
-.second {
-  width: 100vw;
-  height: 400px;
-  background: white;
-}
-</style>
