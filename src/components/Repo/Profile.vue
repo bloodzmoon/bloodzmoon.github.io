@@ -3,7 +3,7 @@
     <img class="profile-img" :src="profile.avatar_url" />
     <span class="name">{{ profile.name }}</span>
     <a class="mention" :href="profile.html_url" target="_blank">@{{ profile.login }}</a>
-    <span class="joined">Joined {{ toDate(profile.created_at) }}</span>
+    <span class="joined">Joined {{ joinedDate }}</span>
   </section>
 </template>
 
@@ -13,9 +13,9 @@ export default {
   props: {
     profile: Object,
   },
-  methods: {
-    toDate(created_at) {
-      const date = new Date(created_at)
+  computed: {
+    joinedDate: function() {
+      const date = new Date(this.profile.created_at)
       const options = { day: 'numeric', month: 'long', year: 'numeric' }
       return date.toLocaleDateString('en-US', options)
     },

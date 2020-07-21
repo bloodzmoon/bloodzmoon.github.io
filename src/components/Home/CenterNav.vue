@@ -5,7 +5,7 @@
         <unicon name="home-alt" fill="white" width="30" height="30"></unicon>Home
       </router-link>
       <router-link to="/repo" class="nav-item">
-        <unicon name="book-alt" fill="white" width="30" height="30"></unicon>Repo
+        <unicon name="diary" fill="white" width="30" height="30"></unicon>Repo
       </router-link>
       <router-link to="/about" class="nav-item">
         <unicon name="at" fill="white" width="30" height="30"></unicon>Contact

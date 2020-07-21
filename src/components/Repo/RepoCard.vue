@@ -1,6 +1,13 @@
 <template>
   <a class="wrapper" target="_blank" :href="repo.html_url">
-    <unicon class="icon" name="code-branch" :fill="getColor(repo.language)" width="26" height="26"></unicon>
+    <unicon
+      class="icon"
+      name="github-alt"
+      icon-style="monochrome"
+      :fill="repoColor"
+      width="30"
+      height="30"
+    ></unicon>
     <div class="card-detail">
       <div class="left">
         <div class="title">{{ repo.name }}</div>
@@ -18,9 +25,9 @@
           ></unicon>
           {{ repo.stargazers_count }}
           <unicon class="fix-icon" name="code-branch" fill="#a2a2a2" width="16" height="16"></unicon>
-          {{ repo.stargazers_count }}
+          {{ repo.forks_count }}
         </div>
-        <div class="footer">{{ repo.size.toLocaleString('en') }} KB</div>
+        <div class="footer">{{ repoSize }} KB</div>
       </div>
     </div>
   </a>
@@ -37,10 +44,13 @@ export default {
   data: () => ({
     colors: Colors,
   }),
-  methods: {
-    getColor(language) {
-      const color = this.colors[language]?.color || '#26aefd'
+  computed: {
+    repoColor: function() {
+      const color = this.colors[this.repo.language]?.color || '#26aefd'
       return color
+    },
+    repoSize: function() {
+      return this.repo.size.toLocaleString('en')
     },
   },
 }

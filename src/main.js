@@ -5,20 +5,22 @@ import router from './router'
 import Unicon from 'vue-unicons'
 import {
   uniHomeAlt,
-  uniBookAlt,
+  uniDiary,
   uniAt,
   uniSearch,
   uniCodeBranch,
   uniStarMonochrome,
+  uniGithubAltMonochrome,
 } from 'vue-unicons/src/icons'
 
 Unicon.add([
   uniHomeAlt,
-  uniBookAlt,
+  uniDiary,
   uniAt,
   uniSearch,
   uniCodeBranch,
   uniStarMonochrome,
+  uniGithubAltMonochrome,
 ])
 Vue.use(Unicon)
 
