@@ -1,9 +1,27 @@
 <template>
   <a class="wrapper" target="_blank" :href="repo.html_url">
-    <div class="title">{{ repo.name }}</div>
-    <div class="footer">
-      <span class="icon" :style="{background: getColor(repo.language)}"></span>
-      {{ repo.language || 'Unknown' }}
+    <unicon class="icon" name="code-branch" :fill="getColor(repo.language)" width="26" height="26"></unicon>
+    <div class="card-detail">
+      <div class="left">
+        <div class="title">{{ repo.name }}</div>
+        <div class="footer">{{ repo.language || 'Unknown' }}</div>
+      </div>
+      <div class="right">
+        <div class="repo-stat">
+          <unicon
+            class="fix-icon"
+            name="star"
+            icon-style="monochrome"
+            fill="#a2a2a2"
+            width="16"
+            height="16"
+          ></unicon>
+          {{ repo.stargazers_count }}
+          <unicon class="fix-icon" name="code-branch" fill="#a2a2a2" width="16" height="16"></unicon>
+          {{ repo.stargazers_count }}
+        </div>
+        <div class="footer">{{ repo.size.toLocaleString('en') }} KB</div>
+      </div>
     </div>
   </a>
 </template>
@@ -32,22 +50,47 @@ export default {
 .wrapper {
   text-decoration: none;
   color: inherit;
-  width: 30%;
-  height: 140px;
-  margin: 12px;
-  padding: 30px;
-  border-radius: 4px;
+  width: 100%;
+  height: 90px;
+  padding: 20px 30px;
+  border-radius: 6px;
   background: white;
-  box-shadow: 0 10px 30px -15px rgba(0, 0, 0, 0.2);
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
   cursor: pointer;
   transition: 0.2s ease-in-out;
+  position: relative;
 }
 
 .wrapper:hover {
-  box-shadow: 0 10px 30px -25px rgba(0, 0, 0, 0.2);
+  background: rgb(240, 246, 251);
+}
+
+.icon {
+  position: absolute;
+  top: 50%;
+  left: 36px;
+  transform: translate(-50%, -50%);
+}
+
+.card-detail {
+  height: 100%;
+  margin-left: 40px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.left {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.right {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-end;
 }
 
 .title {
@@ -55,16 +98,17 @@ export default {
   font-weight: bold;
 }
 
-.footer {
-  font-size: 16px;
-  color: grey;
+.repo-stat {
+  color: #a2a2a2;
 }
 
-.icon {
-  display: inline-block;
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  margin-right: 6px;
+.fix-icon {
+  transform: translateY(2px);
+  margin-left: 8px;
+}
+
+.footer {
+  font-size: 16px;
+  color: #a2a2a2;
 }
 </style>

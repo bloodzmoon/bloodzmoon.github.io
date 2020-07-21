@@ -2,30 +2,25 @@
   <div class="page">
     <Profile :profile="profile" />
     <Detail :profile="profile" />
-
-    <section class="repo">
-      <div class="repo-title">Top Repos</div>
-      <div class="repo-area">
-        <RepoCard v-for="repo in repos" :key="repo.id" :repo="repo" />
-      </div>
-    </section>
+    <Search :value.sync="search" placeholder="Search my repositories" />
+    <RepoArea :repos="repos" />
   </div>
 </template>
 
 <script>
 import Axios from 'axios'
-import Profile from '@/components/Repo/Profile'
-import Detail from '@/components/Repo/Detail'
-import RepoCard from '@/components/Repo/RepoCard'
+import { Profile, Detail, Search, RepoArea } from '@/components/Repo'
 
 export default {
   name: 'Repo',
   components: {
     Profile,
     Detail,
-    RepoCard,
+    Search,
+    RepoArea,
   },
   data: () => ({
+    search: '',
     profile: {
       name: 'Loading...',
       login: 'loading',
@@ -60,22 +55,5 @@ export default {
 <style scoped>
 .page {
   background: #f6f8fa;
-}
-
-.repo {
-  max-width: 1000px;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-}
-
-.repo-title {
-  font-size: 28px;
-}
-
-.repo-area {
-  margin: 40px 0;
-  display: flex;
-  flex-flow: row wrap;
 }
 </style>
