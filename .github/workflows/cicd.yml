@@ -1,4 +1,4 @@
-name: CI
+name: CI/CD
 
 on:
   push:
@@ -22,7 +22,7 @@ jobs:
       - name: ⚡ Build app
         run: yarn build
       
-      - name: ✨ Deploy to master
+      - name: ✨ Deploy to Github Pages
         run: |
           cd dist
           git config --global user.name ${{secrets.NAME}}
