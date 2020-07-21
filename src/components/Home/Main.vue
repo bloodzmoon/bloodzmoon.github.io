@@ -1,37 +1,39 @@
 <template>
-  <section class="main">
-    <img :src="MoonSVG" class="moon" />
-    <img :src="MoonGlowSVG" class="moon glow" />
+  <section class="sky">
+    <img :src="moon" class="moon" />
+    <img :src="moonGlow" class="moon glow" />
     <header class="title">Bloodzmoon</header>
     <span class="sub-title">
       Hi, I’m Than. A computer engineering
       student at KMITL University
     </span>
+    <CenterNav />
     <div class="stars"></div>
-    <div class="arrow"></div>
-    <img :src="GroundSVG" class="ground" />
+    <img :src="ground" class="ground" />
   </section>
 </template>
 
 <script>
-import MoonSVG from '@/assets/home/moon.svg'
-import MoonGlowSVG from '@/assets/home/moon-glow.png'
-import StarsSVG from '@/assets/home/stars.svg'
-import GroundSVG from '@/assets/home/ground.svg'
+import moon from '@/assets/home/moon.svg'
+import moonGlow from '@/assets/home/moon-glow.png'
+import ground from '@/assets/home/ground.svg'
+import CenterNav from '@/components/Home/CenterNav'
 
 export default {
   name: 'Main',
+  components: {
+    CenterNav,
+  },
   data: () => ({
-    MoonSVG,
-    MoonGlowSVG,
-    StarsSVG,
-    GroundSVG,
+    moon,
+    moonGlow,
+    ground,
   }),
 }
 </script>
 
 <style scoped>
-.main {
+.sky {
   width: 100vw;
   height: 100vh;
   background: #1d212c;
@@ -102,27 +104,6 @@ export default {
   }
   50% {
     background-position: 1000px 500px;
-  }
-}
-
-.arrow {
-  border: solid white;
-  border-width: 0 2px 2px 0;
-  padding: 8px;
-  transform: rotate(45deg) translate(-50%, -50%);
-  top: calc(50% + 200px);
-  left: 50%;
-  position: absolute;
-  animation: scroll-down 1.5s infinite ease-in-out;
-}
-
-@keyframes scroll-down {
-  0%,
-  100% {
-    top: calc(50% + 210px);
-  }
-  50% {
-    top: calc(50% + 200px);
   }
 }
 

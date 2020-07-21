@@ -1,19 +1,14 @@
 <template>
-  <div>
-    <Main />
-    <BottomNav />
-  </div>
+  <Main />
 </template>
 
 <script>
 import Main from '@/components/Home/Main'
-import BottomNav from '@/components/Home/BottomNav'
 
 export default {
   name: 'Home',
   components: {
     Main,
-    BottomNav,
   },
 }
 </script>

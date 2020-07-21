@@ -13,13 +13,18 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-body {
+body,
+html {
   margin: 0;
   overflow-x: hidden;
 }
 
 * {
   box-sizing: border-box;
+}
+
+::-webkit-scrollbar {
+  display: none;
 }
 
 #nav {
