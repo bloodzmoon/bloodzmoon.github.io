@@ -12,7 +12,7 @@
 import Colors from '@/assets/gh-colors.json'
 
 export default {
-  name: 'Card',
+  name: 'RepoCard',
   props: {
     repo: Object,
   },
