@@ -5,7 +5,7 @@
 </template>
 
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Karla&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Karla:wght@400;700&display=swap');
 
 #app {
   font-family: 'Karla', Avenir, Helvetica, Arial, sans-serif;
@@ -25,6 +25,11 @@ html {
 
 ::-webkit-scrollbar {
   display: none;
+}
+
+::selection {
+  color: white;
+  background: #26aefd;
 }
 
 #nav {
