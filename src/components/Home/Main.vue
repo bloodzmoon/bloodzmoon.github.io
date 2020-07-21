@@ -76,6 +76,7 @@ export default {
   left: 50%;
   transform: translate(-50%, -50%);
   position: absolute;
+  z-index: 1;
 }
 
 .sub-title {
@@ -88,6 +89,7 @@ export default {
   left: 50%;
   transform: translate(-50%, -50%);
   position: absolute;
+  z-index: 1;
 }
 
 .stars {
@@ -109,11 +111,12 @@ export default {
 
 .ground {
   width: 80%;
+  min-width: 600px;
   height: auto;
   bottom: 0;
   left: 50%;
   transform: translate(-50%, 0);
   position: absolute;
-  z-index: 2;
+  z-index: 0;
 }
 </style>

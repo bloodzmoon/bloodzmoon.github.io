@@ -29,6 +29,7 @@ export default {
   place-items: center;
   top: calc(50% + 200px);
   position: absolute;
+  z-index: 1;
 }
 
 .nav-group {
@@ -41,6 +42,7 @@ export default {
 }
 
 .nav-item {
+  font-size: 18px;
   color: white;
   text-decoration: none;
   display: flex;
