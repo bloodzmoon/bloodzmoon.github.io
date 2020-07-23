@@ -41,6 +41,7 @@ export default {
   font-family: inherit;
   font-size: 18px;
   transition: 0.2s ease-in-out;
+  -webkit-appearance: none;
 }
 
 .input:hover {
