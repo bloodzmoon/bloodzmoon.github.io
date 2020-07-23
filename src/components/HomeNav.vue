@@ -1,14 +1,9 @@
 <template>
   <nav class="footer">
     <ul class="nav-group">
-      <router-link to="/" class="nav-item">
-        <unicon name="home-alt" fill="white" width="30" height="30"></unicon>Home
-      </router-link>
-      <router-link to="/repo" class="nav-item">
-        <unicon name="diary" fill="white" width="30" height="30"></unicon>Repo
-      </router-link>
-      <router-link to="/about" class="nav-item">
-        <unicon name="at" fill="white" width="30" height="30"></unicon>Contact
+      <router-link v-for="item in routes" :key="item.path" :to="item.path" class="nav-item">
+        <unicon :name="item.icon" fill="white" width="30" height="30" />
+        {{ item.text }}
       </router-link>
     </ul>
   </nav>
@@ -16,7 +11,14 @@
 
 <script>
 export default {
-  name: 'CenterNav',
+  name: 'HomeNav',
+  data: () => ({
+    routes: [
+      { path: '/', icon: 'home-alt', text: 'Home' },
+      { path: '/repo', icon: 'diary', text: 'Repo' },
+      { path: '/about', icon: 'at', text: 'Contact' },
+    ],
+  }),
 }
 </script>
 
@@ -34,7 +36,6 @@ export default {
 
 .nav-group {
   padding: 0;
-  font-size: 22px;
   display: flex;
   justify-content: space-evenly;
   width: 100%;
@@ -42,7 +43,7 @@ export default {
 }
 
 .nav-item {
-  font-size: 18px;
+  font-size: 24px;
   color: white;
   text-decoration: none;
   display: flex;
@@ -55,5 +56,15 @@ export default {
 .nav-item:hover {
   cursor: pointer;
   opacity: 1;
+}
+
+@media screen and (max-width: 450px) {
+  .footer {
+    top: 70%;
+  }
+
+  .nav-item {
+    font-size: 18px;
+  }
 }
 </style>
