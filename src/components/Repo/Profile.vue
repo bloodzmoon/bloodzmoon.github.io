@@ -1,5 +1,9 @@
 <template>
   <section class="profile">
+    <router-link to="/" class="back-icon">
+      <unicon name="angle-left" fill="#75a2da" width="36" height="36" />
+      <span class="m-hide">Back</span>
+    </router-link>
     <img class="profile-img" :src="profile.avatar_url" />
     <span class="name">{{ profile.name }}</span>
     <a class="mention" :href="profile.html_url" target="_blank">@{{ profile.login }}</a>
@@ -14,7 +18,7 @@ export default {
     profile: Object,
   },
   computed: {
-    joinedDate: function() {
+    joinedDate: function () {
       const date = new Date(this.profile.created_at)
       const options = { day: 'numeric', month: 'long', year: 'numeric' }
       return date.toLocaleDateString('en-US', options)
@@ -24,6 +28,27 @@ export default {
 </script>
 
 <style scoped>
+.back-icon {
+  color: #75a2da;
+  position: absolute;
+  top: 5%;
+  left: 5%;
+  font-size: 22px;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  opacity: 0.6;
+  transition: 0.2s;
+}
+
+.back-icon:hover {
+  opacity: 1;
+}
+
+.m-hide {
+  transform: translateY(-3.5px);
+}
+
 .profile {
   width: 100%;
   height: 480px;
@@ -33,6 +58,7 @@ export default {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  position: relative;
 }
 
 .profile-img {
@@ -46,6 +72,7 @@ export default {
 }
 
 .name {
+  text-align: center;
   font-size: 36px;
   margin: 10px;
 }
@@ -60,5 +87,11 @@ export default {
   color: rgb(149, 155, 175);
   font-size: 18px;
   margin: 20px;
+}
+
+@media screen and (max-width: 450px) {
+  .m-hide {
+    display: none;
+  }
 }
 </style>

@@ -5,9 +5,9 @@
       name="github-alt"
       icon-style="monochrome"
       :fill="repoColor"
-      width="30"
-      height="30"
-    ></unicon>
+      width="24"
+      height="24"
+    />
     <div class="card-detail">
       <div class="left">
         <div class="title">{{ repo.name }}</div>
@@ -45,11 +45,11 @@ export default {
     colors: Colors,
   }),
   computed: {
-    repoColor: function() {
+    repoColor: function () {
       const color = this.colors[this.repo.language]?.color || '#26aefd'
       return color
     },
-    repoSize: function() {
+    repoSize: function () {
       return this.repo.size.toLocaleString('en')
     },
   },
@@ -96,6 +96,7 @@ export default {
 }
 
 .right {
+  width: fit-content;
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -106,6 +107,12 @@ export default {
 .title {
   font-size: 18px;
   font-weight: bold;
+  width: 35vw;
+  max-width: 500px;
+  height: 22px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  /* background: lightblue; */
 }
 
 .repo-stat {
@@ -120,5 +127,15 @@ export default {
 .footer {
   font-size: 16px;
   color: #a2a2a2;
+}
+
+@media screen and (max-width: 450px) {
+  .wrapper {
+    padding: 20px 10px;
+  }
+
+  .icon {
+    left: 26px;
+  }
 }
 </style>

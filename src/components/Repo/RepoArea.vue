@@ -22,8 +22,9 @@ export default {
 
 <style scoped>
 .repo {
-  max-width: 800px;
+  width: 800px;
   margin: 0 auto;
+  padding: 0 20px;
   display: flex;
   flex-direction: column;
 }
@@ -36,5 +37,11 @@ export default {
   display: flex;
   flex-direction: column;
   box-shadow: 0 10px 30px -15px rgba(0, 0, 0, 0.2);
+}
+
+@media screen and (max-width: 768px) {
+  .repo {
+    width: 100%;
+  }
 }
 </style>

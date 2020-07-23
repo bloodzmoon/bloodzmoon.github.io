@@ -23,10 +23,10 @@ export default {
 
     options() {
       return {
-        responsive: true,
         legend: {
           display: false,
         },
+        aspectRatio: 1,
       }
     },
 

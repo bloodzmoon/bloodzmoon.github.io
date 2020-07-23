@@ -145,7 +145,19 @@ export default {
 .repo-area-title {
   width: 800px;
   margin: 60px auto 20px auto;
+  padding: 0 20px;
   font-size: 32px;
   font-weight: bold;
+}
+
+@media screen and (max-width: 450px) {
+  .stat {
+    width: 100%;
+    padding: 0 20px;
+  }
+  .stat-card {
+    width: 100%;
+    height: 80vw;
+  }
 }
 </style>

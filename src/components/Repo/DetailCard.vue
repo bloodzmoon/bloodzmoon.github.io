@@ -38,4 +38,21 @@ export default {
   font-size: 16px;
   color: gray;
 }
+
+@media screen and (max-width: 450px) {
+  .card {
+    width: 110px;
+    height: 80px;
+    margin: 3px;
+  }
+
+  .number {
+    font-size: 20px;
+  }
+
+  .text {
+    font-size: 14px;
+    color: gray;
+  }
+}
 </style>

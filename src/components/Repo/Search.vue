@@ -29,6 +29,7 @@ export default {
   position: relative;
   width: 800px;
   margin: 0 auto;
+  padding: 0 20px;
 }
 
 .input {
@@ -59,8 +60,14 @@ export default {
 .icon {
   position: absolute;
   top: 50%;
-  right: 10px;
+  right: 30px;
   transform: translate(-50%, -50%);
   pointer-events: none;
+}
+
+@media screen and (max-width: 768px) {
+  .wrapper {
+    width: 100%;
+  }
 }
 </style>

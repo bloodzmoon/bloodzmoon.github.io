@@ -23,11 +23,11 @@ export default {
 
     options() {
       return {
-        responsive: true,
         legend: {
           position: 'right',
         },
         cutoutPercentage: 40,
+        aspectRatio: 1,
       }
     },
 
