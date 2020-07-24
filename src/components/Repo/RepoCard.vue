@@ -1,5 +1,5 @@
 <template>
-  <a class="wrapper" target="_blank" :href="repo.html_url">
+  <a class="wrapper" target="_blank" :href="html_url">
     <unicon
       class="icon"
       name="github-alt"
@@ -10,8 +10,8 @@
     />
     <div class="card-detail">
       <div class="left">
-        <div class="title">{{ repo.name }}</div>
-        <div class="footer">{{ repo.language || 'Unknown' }}</div>
+        <div class="title">{{ name }}</div>
+        <div class="footer">{{ language }}</div>
       </div>
       <div class="right">
         <div class="repo-stat">
@@ -23,9 +23,9 @@
             width="16"
             height="16"
           ></unicon>
-          {{ repo.stargazers_count }}
+          {{ repoStar }}
           <unicon class="fix-icon" name="code-branch" fill="#a2a2a2" width="16" height="16"></unicon>
-          {{ repo.forks_count }}
+          {{ repoFolk }}
         </div>
         <div class="footer">{{ repoSize }} KB</div>
       </div>
@@ -39,18 +39,29 @@ import Colors from '@/assets/gh-colors.json'
 export default {
   name: 'RepoCard',
   props: {
-    repo: Object,
+    name: { type: String, required: true },
+    language: { type: String, default: 'Unknown' },
+    html_url: { type: String, required: true },
+    stargazers_count: { type: Number, required: true },
+    forks_count: { type: Number, required: true },
+    size: { type: Number, required: true },
   },
   data: () => ({
     colors: Colors,
   }),
   computed: {
-    repoColor: function () {
-      const color = this.colors[this.repo.language]?.color || '#26aefd'
+    repoColor() {
+      const color = this.colors[this.language]?.color || '#26aefd'
       return color
     },
-    repoSize: function () {
-      return this.repo.size.toLocaleString('en')
+    repoSize() {
+      return this.size.toLocaleString('en')
+    },
+    repoStar() {
+      return this.stargazers_count.toLocaleString('en')
+    },
+    repoFolk() {
+      return this.forks_count.toLocaleString('en')
     },
   },
 }

@@ -9,8 +9,14 @@
 export default {
   name: 'DetailCard',
   props: {
-    text: String,
-    number: Number,
+    text: {
+      type: String,
+      required: true,
+    },
+    number: {
+      type: Number,
+      required: true,
+    },
   },
 }
 </script>

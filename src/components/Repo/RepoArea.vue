@@ -1,7 +1,7 @@
 <template>
   <section class="repo">
     <div class="area">
-      <RepoCard v-for="repo in repos" :key="repo.id" :repo="repo" />
+      <RepoCard v-for="repo in repos" :key="repo.id" v-bind="repo" />
     </div>
   </section>
 </template>
@@ -15,7 +15,7 @@ export default {
     RepoCard,
   },
   props: {
-    repos: Array,
+    repos: { type: Array, required: true },
   },
 }
 </script>

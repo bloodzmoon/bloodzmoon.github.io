@@ -1,6 +1,6 @@
 <template>
   <div class="page">
-    <Profile :profile="profile" />
+    <Profile v-bind="profile" />
     <Detail :profile="profile" />
     <div class="stat-group">
       <div class="stat">
@@ -49,7 +49,9 @@ export default {
     profile: {
       name: 'Loading...',
       login: 'loading',
-      created_at: null,
+      created_at: '',
+      avatar_url: '',
+      html_url: '',
       public_repos: 0,
       followers: 0,
       following: 0,

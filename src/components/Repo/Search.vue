@@ -19,7 +19,10 @@ export default {
       type: String,
       required: true,
     },
-    placeholder: String,
+    placeholder: {
+      type: String,
+      default: '',
+    },
   },
 }
 </script>

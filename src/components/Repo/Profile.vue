@@ -4,9 +4,9 @@
       <unicon name="angle-left" fill="#75a2da" width="36" height="36" />
       <span class="m-hide">Back</span>
     </router-link>
-    <img class="profile-img" :src="profile.avatar_url" />
-    <span class="name">{{ profile.name }}</span>
-    <a class="mention" :href="profile.html_url" target="_blank">@{{ profile.login }}</a>
+    <img class="profile-img" :src="avatar_url" />
+    <span class="name">{{ name }}</span>
+    <a class="mention" :href="html_url" target="_blank">@{{ login }}</a>
     <span class="joined">Joined {{ joinedDate }}</span>
   </section>
 </template>
@@ -15,11 +15,15 @@
 export default {
   name: 'Profile',
   props: {
-    profile: Object,
+    name: { type: String, required: true },
+    login: { type: String, required: true },
+    created_at: { type: String, required: true },
+    avatar_url: { type: String, required: true },
+    html_url: { type: String, required: true },
   },
   computed: {
-    joinedDate: function () {
-      const date = new Date(this.profile.created_at)
+    joinedDate() {
+      const date = new Date(this.created_at)
       const options = { day: 'numeric', month: 'long', year: 'numeric' }
       return date.toLocaleDateString('en-US', options)
     },
