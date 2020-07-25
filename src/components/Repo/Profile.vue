@@ -4,7 +4,7 @@
       <unicon name="angle-left" fill="#75a2da" width="36" height="36" />
       <span class="m-hide">Back</span>
     </router-link>
-    <img class="profile-img" :src="avatar_url" />
+    <img class="profile-img" :src="avatar_url || null" />
     <span class="name">{{ name }}</span>
     <a class="mention" :href="html_url" target="_blank">@{{ login }}</a>
     <span class="joined">Joined {{ joinedDate }}</span>

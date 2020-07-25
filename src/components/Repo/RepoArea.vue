@@ -37,6 +37,8 @@ export default {
   display: flex;
   flex-direction: column;
   box-shadow: 0 10px 30px -15px rgba(0, 0, 0, 0.2);
+  max-height: 400px;
+  overflow-y: scroll;
 }
 
 @media screen and (max-width: 768px) {

@@ -18,7 +18,7 @@
     </div>
     <div class="repo-area-title">My Repositories</div>
     <Search :value.sync="search" placeholder="Search my repositories" />
-    <RepoArea v-if="searchRepos.length" :repos="limitSearchRepos" />
+    <RepoArea v-if="searchRepos.length" :repos="searchRepos" />
     <p class="plain-text">{{ foundCount }}</p>
   </div>
 </template>
@@ -67,9 +67,6 @@ export default {
           repo.name?.toLowerCase().includes(this.search.toLowerCase()) ||
           repo.language?.toLowerCase().includes(this.search.toLowerCase())
       )
-    },
-    limitSearchRepos: function () {
-      return this.searchRepos.slice(0, 6)
     },
     foundCount: function () {
       return this.searchRepos.length > 1
