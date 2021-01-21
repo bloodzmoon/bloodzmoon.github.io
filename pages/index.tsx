@@ -1,4 +1,3 @@
-import Image from 'next/image'
 import Link from 'next/link'
 import {
   FiMail,
@@ -36,7 +35,7 @@ function HomePage() {
           </Link>
         </div>
         <hr className="w-full border-t-2 my-10" />
-        <Image src="/img/me.jpg" width={373} height={248} />
+        <img src="/img/me.jpg" width={373} height={248} />
         <div className="flex flex-col items-center my-8">
           <span className="text-4xl font-medium tracking-wider text-gray-700 mb-2">
             THANYATHON
