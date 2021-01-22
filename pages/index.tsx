@@ -1,4 +1,3 @@
-import Link from 'next/link'
 import {
   FiMail,
   FiFacebook,
@@ -6,33 +5,23 @@ import {
   FiGithub,
   FiHeart,
 } from 'react-icons/fi'
-import { Layout, Button, CircleIcon } from 'components'
+import { Layout, ButtonLink, ContactLink } from 'components'
 
 function HomePage() {
   return (
     <Layout title="Thanyathon">
       <div className="max-w-screen-xl mx-auto flex flex-col justify-center items-center">
         <div className="mt-8 w-80 flex justify-evenly">
-          <Link href="mailto:thanyathon.dev@gmail.com">
-            <a target="_blank" rel="noreferrer noopener">
-              <CircleIcon Icon={FiMail} />
-            </a>
-          </Link>
-          <Link href="https://www.facebook.com/i.thanthann/">
-            <a target="_blank" rel="noreferrer noopener">
-              <CircleIcon Icon={FiFacebook} />
-            </a>
-          </Link>
-          <Link href="https://www.instagram.com/i.thann">
-            <a target="_blank" rel="noreferrer noopener">
-              <CircleIcon Icon={FiInstagram} />
-            </a>
-          </Link>
-          <Link href="https://github.com/bloodzmoon">
-            <a target="_blank" rel="noreferrer noopener">
-              <CircleIcon Icon={FiGithub} />
-            </a>
-          </Link>
+          <ContactLink href="mailto:thanyathon.dev@gmail.com" Icon={FiMail} />
+          <ContactLink
+            href="https://www.facebook.com/i.thanthann"
+            Icon={FiFacebook}
+          />
+          <ContactLink
+            href="https://www.instagram.com/i.thann"
+            Icon={FiInstagram}
+          />
+          <ContactLink href="https://github.com/bloodzmoon" Icon={FiGithub} />
         </div>
         <hr className="w-full border-t-2 my-10" />
         <img src="/img/me.jpg" width={373} height={248} />
@@ -45,19 +34,15 @@ function HomePage() {
           </span>
         </div>
         <hr className="w-16 border-t-2" />
-        <p className="my-8 text-lg text-gray-600 text-center">
+        <p className="my-8 tracking-wide text-gray-600 text-center">
           Hello! I am a full stack developer. A junior computer engineering
           @KMITL.
           <br />
           Nice to meet you 'w' /
         </p>
         <div className="w-96 flex justify-evenly">
-          <Button>
-            <Link href="/works">WORKS</Link>
-          </Button>
-          <Button>
-            <Link href="/resume">RESUME</Link>
-          </Button>
+          <ButtonLink href="/works">WORKS</ButtonLink>
+          <ButtonLink href="/resume">RESUME</ButtonLink>
         </div>
         <hr className="w-full border-t-2 my-10" />
         <div className="inline-flex text-gray-300 mb-8">
