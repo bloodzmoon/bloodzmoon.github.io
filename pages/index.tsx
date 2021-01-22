@@ -10,7 +10,7 @@ import { Layout, ButtonLink, ContactLink } from 'components'
 function HomePage() {
   return (
     <Layout title="Thanyathon">
-      <div className="max-w-screen-xl mx-auto flex flex-col justify-center items-center">
+      <div className="flex flex-col justify-center items-center">
         <div className="mt-8 w-80 flex justify-evenly">
           <ContactLink href="mailto:thanyathon.dev@gmail.com" Icon={FiMail} />
           <ContactLink

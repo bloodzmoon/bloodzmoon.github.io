@@ -8,7 +8,7 @@ function Layout({ title, children }: Props) {
       <Head>
         <title>{title}</title>
       </Head>
-      <div className="min-h-screen">{children}</div>
+      <div className="max-w-screen-xl mx-auto">{children}</div>
     </>
   )
 }
