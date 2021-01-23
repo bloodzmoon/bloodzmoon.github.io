@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { Works } from 'api/works'
+import { Works } from 'utils'
 
 type Props = { sidebarData: Works }
 

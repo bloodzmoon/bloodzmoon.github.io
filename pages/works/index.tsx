@@ -1,5 +1,5 @@
-import { GetServerSideProps } from 'next'
-import { Works } from 'api/works'
+import { GetStaticProps } from 'next'
+import { works } from 'utils'
 
 function WorksIndexPage() {
   return (
@@ -13,15 +13,12 @@ function WorksIndexPage() {
   )
 }
 
-export const getServerSideProps: GetServerSideProps = async (ctx) => {
-  const res = await fetch(process.env.API + '/works')
-  const sidebarData: Works = await res.json()
-
+export const getStaticProps: GetStaticProps = async (ctx) => {
   return {
     props: {
       title: 'Works - Thanyathon',
       layoutClassName: 'flex',
-      sidebarData,
+      sidebarData: works,
     },
   }
 }

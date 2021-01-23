@@ -1,5 +1,5 @@
-import { GetServerSideProps } from 'next'
-import { Works } from 'api/works'
+import { GetStaticProps, GetStaticPaths } from 'next'
+import { works } from 'utils'
 
 function WorksPage({ repoData }) {
   return (
@@ -21,22 +21,29 @@ function WorksPage({ repoData }) {
   )
 }
 
-export const getServerSideProps: GetServerSideProps = async (ctx) => {
-  const res = await fetch(process.env.API + '/works')
-  const sidebarData: Works = await res.json()
-  const title = ctx.query.name
-
-  const res2 = await fetch(process.env.API + '/repo?name=' + title)
-  const repoData = await res2.text()
+export const getStaticProps: GetStaticProps = async (ctx) => {
+  const repoName = ctx.params.name
+  const repo = await fetch(
+    `https://api.github.com/repos/bloodzmoon/${repoName}`
+  )
+  const repoData = await repo.json()
 
   return {
     props: {
-      title: `${title} - Thanyathon`,
+      title: `${repoName} - Thanyathon`,
       layoutClassName: 'flex',
-      sidebarData,
-      repoData,
+      sidebarData: works,
+      repoData: repoData.html_url,
     },
   }
+}
+
+export const getStaticPaths: GetStaticPaths = async () => {
+  const paths = works
+    .flatMap((data) => data.content)
+    .map((path) => `/works/${path}`)
+
+  return { paths, fallback: false }
 }
 
 export default WorksPage
