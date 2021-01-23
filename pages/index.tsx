@@ -1,4 +1,4 @@
-import { GetServerSideProps } from 'next'
+import { GetStaticProps } from 'next'
 import {
   FiMail,
   FiFacebook,
@@ -52,7 +52,7 @@ function HomePage() {
   )
 }
 
-export const getServerSideProps: GetServerSideProps = async (ctx) => {
+export const getStaticProps: GetStaticProps = async (ctx) => {
   return {
     props: {
       title: 'Thanyathon - Portfolio',
