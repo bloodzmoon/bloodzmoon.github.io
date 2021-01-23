@@ -14,6 +14,10 @@ module.exports = {
       colors: {
         gray: colors.trueGray,
       },
+      height: {
+        18: '4.5rem',
+        'screen-18': 'calc(100vh - 4.5rem)',
+      },
     },
   },
   variants: {

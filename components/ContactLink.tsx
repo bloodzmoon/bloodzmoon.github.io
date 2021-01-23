@@ -1,4 +1,3 @@
-import Link from 'next/link'
 import { IconType } from 'react-icons'
 
 type Props = {
@@ -8,15 +7,14 @@ type Props = {
 
 function ContactLink({ Icon, href }: Props) {
   return (
-    <Link href={href}>
-      <a
-        className="w-14 h-14 border-2 rounded-full flex justify-center items-center text-gray-300 text-2xl hover:bg-gray-700 hover:text-white transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-300"
-        target="_blank"
-        rel="noreferrer noopener"
-      >
-        <Icon />
-      </a>
-    </Link>
+    <a
+      href={href}
+      className="w-14 h-14 border-2 rounded-full flex justify-center items-center text-gray-300 text-2xl hover:bg-gray-700 hover:text-white transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-300"
+      target="_blank"
+      rel="noreferrer noopener"
+    >
+      <Icon />
+    </a>
   )
 }
 

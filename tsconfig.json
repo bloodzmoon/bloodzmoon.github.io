@@ -24,6 +24,9 @@
             ],
             "utils": [
               "./utils/index.ts"
+            ],
+            "api/*":[
+              "./pages/api/*"
             ]
         }
     },
