@@ -1,28 +1,29 @@
 <script>
-  import GitHubIcon from 'svelte-icons/ti/TiSocialGithub.svelte'
-  import LinkedInIcon from 'svelte-icons/ti/TiSocialLinkedin.svelte'
-  import LocationIcon from 'svelte-icons/ti/TiLocationArrow.svelte'
+  import ContactCard from "$components/ContactCard.svelte";
+  import GitHubIcon from "svelte-icons/ti/TiSocialGithub.svelte";
+  import LinkedInIcon from "svelte-icons/ti/TiSocialLinkedin.svelte";
+  import WorldIcon from "svelte-icons/ti/TiWorld.svelte";
 
   let contacts = [
     {
       icon: GitHubIcon,
-      title: 'GitHub',
-      text: 'bloodzmoon',
-      link: 'https://github.com/bloodzmoon',
+      title: "GitHub",
+      text: "bloodzmoon",
+      link: "https://github.com/bloodzmoon",
     },
     {
       icon: LinkedInIcon,
-      title: 'LinkedIn',
-      text: 'Thanyathon Pornsawatchai',
-      link: 'https://www.linkedin.com/in/thanyathon-pornsawatchai',
+      title: "LinkedIn",
+      text: "Thanyathon Pornsawatchai",
+      link: "https://www.linkedin.com/in/thanyathon-pornsawatchai",
     },
     {
-      icon: LocationIcon,
-      title: 'Email',
-      text: 'Thanyathon Dev',
-      link: 'mailto:thanyathon.dev@gmail.com',
+      icon: WorldIcon,
+      title: "Email",
+      text: "Thanyathon Dev",
+      link: "mailto:thanyathon.dev@gmail.com",
     },
-  ]
+  ];
 </script>
 
 <footer class="contact-section">
@@ -31,15 +32,7 @@
     <span class="divider-line" />
     <div class="list">
       {#each contacts as contact, i (i)}
-        <div class="contact">
-          <div class="contact-icon">
-            <svelte:component this={contact.icon} />
-          </div>
-          <div>
-            <p class="contact-title">{contact.title}</p>
-            <p class="contact-text">{contact.text}</p>
-          </div>
-        </div>
+        <ContactCard {contact} />
       {/each}
     </div>
   </div>
@@ -57,7 +50,7 @@
   .content {
     margin: 0 auto;
     margin-top: 12rem;
-    padding: 0 1rem;
+    padding: 0 2rem;
     width: 100%;
     max-width: 1480px;
   }
@@ -79,30 +72,17 @@
     padding: 3rem 0;
     display: flex;
     justify-content: space-between;
-    flex-flow: row wrap;
   }
 
-  .contact {
-    display: flex;
-    align-items: center;
-  }
+  @media only screen and (max-width: 850px) {
+    .content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
 
-  .contact-icon {
-    width: 80px;
-    height: 80px;
-    display: flex;
-    justify-content: center;
-    align-items: baseline;
-  }
-
-  .contact-title {
-    margin: 0;
-    opacity: 0.5;
-  }
-
-  .contact-text {
-    margin: 0;
-    font-weight: 400;
-    font-size: 1.25rem;
+    .list {
+      flex-direction: column;
+    }
   }
 </style>

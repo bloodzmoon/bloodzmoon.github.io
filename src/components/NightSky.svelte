@@ -1,6 +1,6 @@
 <script>
-  import Moon from '/images/moon.svg'
-  import MoonGlow from '/images/moon-glow.png'
+  import Moon from "/images/moon.svg";
+  import MoonGlow from "/images/moon-glow.png";
 </script>
 
 <section class="sky">
@@ -23,7 +23,7 @@
   .stars {
     width: 100%;
     height: 100%;
-    background: url('/images/stars.svg') repeat;
+    background: url("/images/stars.svg") repeat;
     animation: flowing-sky 60s ease-in-out infinite;
   }
 
@@ -40,17 +40,6 @@
   .glow {
     z-index: 1;
     animation: glowing 4s linear infinite;
-  }
-
-  .ground {
-    width: 80%;
-    min-width: 600px;
-    height: auto;
-    bottom: 0;
-    left: 50%;
-    transform: translate(-50%, 0);
-    position: absolute;
-    z-index: 0;
   }
 
   .main {

@@ -1,48 +1,49 @@
 <script>
-  import FolderIcon from '/images/folder-icon.png'
-  import EducationIcon from 'svelte-icons/ti/TiMortarBoard.svelte'
-  import ImageIcon from 'svelte-icons/ti/TiImage.svelte'
-  import CardIcon from 'svelte-icons/ti/TiBook.svelte'
-  import LockIcon from 'svelte-icons/ti/TiLockClosed.svelte'
-  import KeyboardIcon from 'svelte-icons/ti/TiKeyboard.svelte'
+  import DocumentCard from "./DocumentCard.svelte";
+  import FolderIcon from "/images/folder-icon.png";
+  import EducationIcon from "svelte-icons/ti/TiMortarBoard.svelte";
+  import ImageIcon from "svelte-icons/ti/TiImage.svelte";
+  import CardIcon from "svelte-icons/ti/TiBook.svelte";
+  import LockIcon from "svelte-icons/ti/TiLockClosed.svelte";
+  import KeyboardIcon from "svelte-icons/ti/TiKeyboard.svelte";
 
   let cards = [
     {
-      title: 'Educa // Online learning platform',
+      title: "Educa",
+      description: "Online learning platform",
       icon: EducationIcon,
-      iconColor: 'black',
-      backgroundColor: '#ff6a8a',
-      link: 'https://educa.vercel.app',
+      color: "#ff6a8a",
+      link: "https://educa.vercel.app",
     },
     {
-      title: 'Pure // Online thesis exhibition',
+      title: "Pure",
+      description: "Online thesis exhibition",
       icon: ImageIcon,
-      iconColor: 'black',
-      backgroundColor: '#84affd',
-      link: 'https://pure.archlandkmitlthesis.com',
+      color: "#84affd",
+      link: "https://pure.archlandkmitlthesis.com",
     },
     {
-      title: 'ONU // UNO card game clone',
+      title: "ONU",
+      description: "UNO card game clone",
       icon: CardIcon,
-      iconColor: 'black',
-      backgroundColor: '#49d1a4',
-      link: 'https://onu-uno.netlify.app/',
+      color: "#49d1a4",
+      link: "https://onu-uno.netlify.app/",
     },
     {
-      title: 'Autoken // Simple access & refresh token visualization',
+      title: "Autoken",
+      description: "Simple access & refresh token visualization",
       icon: LockIcon,
-      iconColor: 'black',
-      backgroundColor: '#a595ff',
-      link: 'https://autoken.vercel.app/',
+      color: "#a595ff",
+      link: "https://autoken.vercel.app/",
     },
     {
-      title: 'Checkit // Playground for keyboard & mouse',
+      title: "Checkit",
+      description: "Playground for keyboard & mouse",
       icon: KeyboardIcon,
-      iconColor: 'black',
-      backgroundColor: '#ffb048',
-      link: 'https://checkit.vercel.app/',
+      color: "#ffb048",
+      link: "https://checkit.vercel.app/",
     },
-  ]
+  ];
 </script>
 
 <section class="document-section">
@@ -52,16 +53,7 @@
   </h1>
   <div class="container">
     {#each cards as card, i (i)}
-      <a href={card.link} target="_blank" class="card-link">
-        <div class="card">
-          <div class="card-img" style={`background: ${card.backgroundColor}`}>
-            <div class="card-icon" style={`color: ${card.iconColor}`}>
-              <svelte:component this={card.icon} />
-            </div>
-          </div>
-          <p class="card-title">{card.title}</p>
-        </div>
-      </a>
+      <DocumentCard {card} />
     {/each}
   </div>
   <span class="ending-line" />
@@ -70,7 +62,7 @@
 <style>
   .document-section {
     margin: 0 auto;
-    padding: 1rem;
+    padding: 2rem;
     width: 100%;
     max-width: 1480px;
     display: flex;
@@ -80,7 +72,7 @@
 
   .title {
     width: 100%;
-    justify-self: flex-start;
+    justify-content: flex-start;
     display: flex;
     align-items: center;
   }
@@ -99,41 +91,7 @@
     display: grid;
     grid-template-columns: repeat(auto-fill, 400px);
     justify-content: space-between;
-    overflow: auto;
-  }
-
-  .card {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 1rem;
-  }
-
-  .card-link {
-    text-decoration: none;
-    color: inherit;
-  }
-
-  .card-img {
-    --size: 400px;
-    width: var(--size);
-    height: var(--size);
-    background: gray;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .card-icon {
-    --size: 140px;
-    width: var(--size);
-    height: var(--size);
-  }
-
-  .card-title {
-    width: fit-content;
-    margin: 0.5rem 0;
-    font-size: 1.25rem;
-    font-weight: 400;
+    overflow-x: hidden;
   }
 
   .ending-line {
@@ -143,5 +101,29 @@
     background: #1b1e27;
     opacity: 0.5;
     margin: 5rem 0;
+  }
+
+  @media only screen and (max-width: 850px) {
+    .title {
+      width: 400px;
+    }
+
+    .container {
+      justify-content: space-evenly;
+    }
+  }
+
+  @media only screen and (max-width: 500px) {
+    .document-section {
+      padding: 1rem;
+    }
+
+    .title {
+      width: 300px;
+    }
+
+    .container {
+      grid-template-columns: repeat(auto-fill, 300px);
+    }
   }
 </style>

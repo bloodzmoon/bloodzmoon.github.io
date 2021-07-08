@@ -1,15 +1,15 @@
 <script>
-  import { onMount } from 'svelte'
+  import { onMount } from "svelte";
 
-  $: profileUrl = ''
+  $: profileUrl = "";
 
   async function getProfileFromGitHub() {
-    const res = await fetch('https://api.github.com/users/bloodzmoon')
-    const data = await res.json()
-    profileUrl = data.avatar_url
+    const res = await fetch("https://api.github.com/users/bloodzmoon");
+    const data = await res.json();
+    profileUrl = data.avatar_url;
   }
 
-  onMount(getProfileFromGitHub)
+  onMount(getProfileFromGitHub);
 </script>
 
 <section class="profile-section">
@@ -49,5 +49,12 @@
     color: #0088eb;
     font-size: 2rem;
     margin-top: -2rem;
+  }
+
+  @media only screen and (max-width: 500px) {
+    .name,
+    .role {
+      font-size: 1.5rem;
+    }
   }
 </style>

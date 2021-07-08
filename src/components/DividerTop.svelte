@@ -19,7 +19,7 @@
     display: block;
     position: relative;
     height: 150px;
-    margin-top: -150px;
+    margin-top: -149px;
   }
 
   .custom-shape-divider-bottom-1625713193 {

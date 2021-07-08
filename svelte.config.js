@@ -15,11 +15,11 @@ const config = {
     vite: {
       resolve: {
         alias: {
-          $assets: resolve('./src/assets'),
-          $components: resolve('./src/components')
-        }
-      }
-    }
+          $assets: resolve("./src/assets"),
+          $components: resolve("./src/components"),
+        },
+      },
+    },
   },
 };
 

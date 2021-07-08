@@ -1,5 +1,5 @@
 <script>
-  import NightSky from '$components/NightSky.svelte'
+  import NightSky from "$components/NightSky.svelte";
 </script>
 
 <NightSky>
@@ -40,7 +40,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    transform: translateY(180px);
+    transform: translateY(140px);
   }
 
   .scroll-text {
@@ -56,7 +56,7 @@
 
   .scroll-arrow::before {
     position: absolute;
-    content: '';
+    content: "";
     width: 12px;
     height: 2px;
     background: white;
@@ -65,7 +65,7 @@
 
   .scroll-arrow::after {
     position: absolute;
-    content: '';
+    content: "";
     width: 12px;
     height: 2px;
     background: white;
