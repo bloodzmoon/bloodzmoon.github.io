@@ -1,6 +1,6 @@
 <script>
   import DocumentCard from "./DocumentCard.svelte";
-  import FolderIcon from "/images/folder-icon.png";
+  import FolderIcon from "$images/folder-icon.png";
   import EducationIcon from "svelte-icons/ti/TiMortarBoard.svelte";
   import ImageIcon from "svelte-icons/ti/TiImage.svelte";
   import CardIcon from "svelte-icons/ti/TiBook.svelte";
