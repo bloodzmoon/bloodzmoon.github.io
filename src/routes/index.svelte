@@ -7,6 +7,9 @@
   import DividerBottom from "$components/DividerBottom.svelte";
 </script>
 
+<svelte:head>
+  <title>Than - World</title>
+</svelte:head>
 <Welcome />
 <DividerTop />
 <Profile />

@@ -1,11 +1,18 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" prefix="og: http://ogp.me/ns#">
   <head>
     <meta charset="utf-8" />
     <link rel="icon" href="/favicon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta property="og:title" content="Than - World" />
+    <meta property="og:image" content="/screenshot.png" />
+    <meta
+      property="og:description"
+      content="Thanyathon Pornsawatchai's GitHub pages"
+    />
     <style>
       @import url("https://fonts.googleapis.com/css2?family=Overpass:wght@200;400&display=swap");
+
       html,
       body {
         margin: 0;
@@ -13,6 +20,7 @@
         font-weight: 200;
         overflow-x: hidden;
       }
+
       *,
       *::after,
       *::before {
@@ -21,6 +29,7 @@
     </style>
     %svelte.head%
   </head>
+
   <body>
     <div id="svelte">%svelte.body%</div>
   </body>
