@@ -1,7 +1,6 @@
 <script>
   import Moon from '/images/moon.svg'
   import MoonGlow from '/images/moon-glow.png'
-  import Ground from '/images/ground.svg'
 </script>
 
 <section class="sky">
@@ -11,13 +10,12 @@
   <main class="main">
     <slot />
   </main>
-  <img src={Ground} class="ground" alt="ground" />
 </section>
 
 <style>
   .sky {
     width: 100vw;
-    height: 100vh;
+    height: calc(100vh + 150px);
     background: #1d212c;
     position: relative;
   }
