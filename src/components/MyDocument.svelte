@@ -1,26 +1,46 @@
 <script>
   import FolderIcon from '/images/folder-icon.png'
+  import EducationIcon from 'svelte-icons/ti/TiMortarBoard.svelte'
+  import ImageIcon from 'svelte-icons/ti/TiImage.svelte'
+  import CardIcon from 'svelte-icons/ti/TiBook.svelte'
+  import LockIcon from 'svelte-icons/ti/TiLockClosed.svelte'
+  import KeyboardIcon from 'svelte-icons/ti/TiKeyboard.svelte'
 
   let cards = [
     {
-      title: 'Project: ONU',
-      img: '',
-      link: 'https://google.com',
+      title: 'Educa // Online learning platform',
+      icon: EducationIcon,
+      iconColor: 'black',
+      backgroundColor: '#ff6a8a',
+      link: 'https://educa.vercel.app',
     },
     {
-      title: 'Project: ONU',
-      img: '',
-      link: '',
+      title: 'Pure // Online thesis exhibition',
+      icon: ImageIcon,
+      iconColor: 'black',
+      backgroundColor: '#84affd',
+      link: 'https://pure.archlandkmitlthesis.com',
     },
     {
-      title: 'Project: ONU',
-      img: '',
-      link: '',
+      title: 'ONU // UNO card game clone',
+      icon: CardIcon,
+      iconColor: 'black',
+      backgroundColor: '#49d1a4',
+      link: 'https://onu-uno.netlify.app/',
     },
     {
-      title: 'Project: ONU',
-      img: '',
-      link: '',
+      title: 'Autoken // Simple access & refresh token visualization',
+      icon: LockIcon,
+      iconColor: 'black',
+      backgroundColor: '#a595ff',
+      link: 'https://autoken.vercel.app/',
+    },
+    {
+      title: 'Checkit // Playground for keyboard & mouse',
+      icon: KeyboardIcon,
+      iconColor: 'black',
+      backgroundColor: '#ffb048',
+      link: 'https://checkit.vercel.app/',
     },
   ]
 </script>
@@ -34,7 +54,11 @@
     {#each cards as card, i (i)}
       <a href={card.link} target="_blank" class="card-link">
         <div class="card">
-          <img src={card.img} class="card-img" alt="card" />
+          <div class="card-img" style={`background: ${card.backgroundColor}`}>
+            <div class="card-icon" style={`color: ${card.iconColor}`}>
+              <svelte:component this={card.icon} />
+            </div>
+          </div>
           <p class="card-title">{card.title}</p>
         </div>
       </a>
@@ -63,7 +87,7 @@
 
   .title-icon {
     width: 28px;
-    margin-right: 1rem;
+    margin-right: 0.5rem;
   }
 
   .title-text {
@@ -93,12 +117,22 @@
     --size: 400px;
     width: var(--size);
     height: var(--size);
-    background: lightskyblue;
+    background: gray;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .card-icon {
+    --size: 140px;
+    width: var(--size);
+    height: var(--size);
   }
 
   .card-title {
     width: fit-content;
     margin: 0.5rem 0;
+    font-size: 1.25rem;
     font-weight: 400;
   }
 
