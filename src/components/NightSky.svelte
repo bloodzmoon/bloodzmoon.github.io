@@ -1,0 +1,86 @@
+<script>
+  import Moon from '/images/moon.svg'
+  import MoonGlow from '/images/moon-glow.png'
+  import Ground from '/images/ground.svg'
+</script>
+
+<section class="sky">
+  <div class="stars" />
+  <img src={Moon} class="moon" alt="moon" />
+  <img src={MoonGlow} class="moon glow" alt="moon glow" />
+  <main class="main">
+    <slot />
+  </main>
+  <img src={Ground} class="ground" alt="ground" />
+</section>
+
+<style>
+  .sky {
+    width: 100vw;
+    height: 100vh;
+    background: #1d212c;
+    position: relative;
+  }
+
+  .stars {
+    width: 100%;
+    height: 100%;
+    background: url('/images/stars.svg') repeat;
+    animation: flowing-sky 60s ease-in-out infinite;
+  }
+
+  .moon {
+    width: 160px;
+    height: 160px;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    z-index: 2;
+  }
+
+  .glow {
+    z-index: 1;
+    animation: glowing 4s linear infinite;
+  }
+
+  .ground {
+    width: 80%;
+    min-width: 600px;
+    height: auto;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 0);
+    position: absolute;
+    z-index: 0;
+  }
+
+  .main {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  @keyframes glowing {
+    0%,
+    100% {
+      width: 140px;
+      height: 140px;
+    }
+    50% {
+      width: 160px;
+      height: 160px;
+    }
+  }
+
+  @keyframes flowing-sky {
+    0%,
+    100% {
+      background-position: 0 0;
+    }
+    50% {
+      background-position: 1000px 500px;
+    }
+  }
+</style>
