@@ -1,29 +1,29 @@
 <script>
-  import ContactCard from "$components/ContactCard.svelte";
-  import GitHubIcon from "svelte-icons/ti/TiSocialGithub.svelte";
-  import LinkedInIcon from "svelte-icons/ti/TiSocialLinkedin.svelte";
-  import WorldIcon from "svelte-icons/ti/TiWorld.svelte";
+  import ContactCard from '$components/ContactCard.svelte'
+  import GitHubIcon from 'svelte-icons/ti/TiSocialGithub.svelte'
+  import LinkedInIcon from 'svelte-icons/ti/TiSocialLinkedin.svelte'
+  import WorldIcon from 'svelte-icons/ti/TiWorld.svelte'
 
   let contacts = [
     {
       icon: GitHubIcon,
-      title: "GitHub",
-      text: "bloodzmoon",
-      link: "https://github.com/bloodzmoon",
+      title: 'GitHub',
+      text: 'bloodzmoon',
+      link: 'https://github.com/bloodzmoon',
     },
     {
       icon: LinkedInIcon,
-      title: "LinkedIn",
-      text: "Thanyathon Pornsawatchai",
-      link: "https://www.linkedin.com/in/thanyathon-pornsawatchai",
+      title: 'LinkedIn',
+      text: 'Thanyathon Pornsawatchai',
+      link: 'https://www.linkedin.com/in/thanyathon-po/',
     },
     {
       icon: WorldIcon,
-      title: "Email",
-      text: "Thanyathon Dev",
-      link: "mailto:thanyathon.dev@gmail.com",
+      title: 'Email',
+      text: 'Thanyathon Dev',
+      link: 'mailto:thanyathon.dev@gmail.com',
     },
-  ];
+  ]
 </script>
 
 <footer class="contact-section">
