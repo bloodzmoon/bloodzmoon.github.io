@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "scripts": {
     "dev": "svelte-kit dev",
-    "build": "rm -rf build && svelte-kit build && touch build/.nojekyll",
+    "build": "rimraf --glob 'build' && svelte-kit build && touch build/.nojekyll",
     "preview": "svelte-kit preview",
     "check": "svelte-check --tsconfig ./tsconfig.json",
     "check:watch": "svelte-check --tsconfig ./tsconfig.json --watch",
@@ -22,9 +22,11 @@
     "gh-pages": "^3.2.3",
     "prettier": "~2.2.1",
     "prettier-plugin-svelte": "^2.2.0",
+    "rimraf": "^6.0.1",
     "svelte": "^3.34.0",
     "svelte-check": "^2.0.0",
     "svelte-preprocess": "^4.0.0",
+    "touch-cli": "^0.0.1",
     "tslib": "^2.0.0",
     "typescript": "^4.0.0"
   },
