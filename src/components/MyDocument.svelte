@@ -3,9 +3,11 @@
   import FolderIcon from "$images/folder-icon.png";
   import EducationIcon from "svelte-icons/ti/TiMortarBoard.svelte";
   import ImageIcon from "svelte-icons/ti/TiImage.svelte";
+  import LocationArrowOutline from 'svelte-icons/ti/TiLocationArrowOutline.svelte'
   import CardIcon from "svelte-icons/ti/TiBook.svelte";
   import LockIcon from "svelte-icons/ti/TiLockClosed.svelte";
   import KeyboardIcon from "svelte-icons/ti/TiKeyboard.svelte";
+  import Pencil from 'svelte-icons/ti/TiPencil.svelte'
 
   let cards = [
     {
@@ -43,6 +45,20 @@
       color: "#ffb048",
       link: "https://checkit.vercel.app/",
     },
+    {
+      title: "Cursor Fighter",
+      description: "Multiplayer fighting game",
+      icon: LocationArrowOutline,
+      color: "#ed424e",
+      link: "https://cursor-fighter.vercel.app/",
+    },
+    {
+      title: "Typerr",
+      description: "Clicker game but typing",
+      icon: Pencil,
+      color: "#6febed",
+      link: "https://typerr.vercel.app/",
+    }
   ];
 </script>
 
